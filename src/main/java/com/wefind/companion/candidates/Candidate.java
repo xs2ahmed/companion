@@ -1,50 +1,45 @@
-package com.example.demo.candidates;
+package com.wefind.companion.candidates;
+
+import jakarta.persistence.*;
 
 import java.util.Date;
 
+@Entity
+@Table(name = "candidates")
 public class Candidate {
 
-    private  String name;
-    private  String bio;
+@Id
+@SequenceGenerator(
+        name = "candidate_sequence",
+        sequenceName = "candidate_sequence",
+        allocationSize = 1
+)
+@GeneratedValue(
+        strategy = GenerationType.SEQUENCE,
+        generator = "candidate_sequence"
+
+)
     private  Long id;
+    private  String name;
+    private Integer gender;
+    private  String bio;
+    private  String phone;
+    private  String email;
     private Date dob;
+    private  Integer city; // we will calculate country
 
-    public Candidate(Long id, String name, String bio,  Date dob) {
-        this.name = name;
+
+    public Candidate(Long id, String name, Integer gender, String bio, String phone, String email, Date dob, Integer city) {
         this.id = id;
-        this.dob = dob;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
         this.name = name;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Date getDob() {
-        return dob;
-    }
-
-    public void setDob(Date dob) {
+        this.gender = gender;
+        this.bio = bio;
+        this.phone = phone;
+        this.email = email;
         this.dob = dob;
+        this.city = city;
     }
 
-    @Override
-    public String toString() {
-        return "Candidate{" +
-                "name='" + name + '\'' +
-                ", id=" + id +
-                ", dob=" + dob +
-                '}';
+    public Candidate() {
     }
 }
