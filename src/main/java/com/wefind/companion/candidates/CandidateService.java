@@ -30,4 +30,8 @@ public class CandidateService {
         return stored;
     }
 
+    public Candidate getUserHavingPhone(String phone) {
+        Candidate candidate =  candidatesRepository.getCandidateByPhoneEquals(phone);
+        return candidate;
+    }
 }

@@ -8,4 +8,6 @@ import java.util.Optional;
 @Repository
 public interface CandidatesRepository extends JpaRepository<Candidate, Long> {
 
+    Candidate getCandidateByPhoneEquals(String phone);
+
 }
