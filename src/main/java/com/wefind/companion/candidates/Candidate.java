@@ -37,6 +37,9 @@ public class Candidate {
     @Transient
     private Integer age;
 
+    @OneToOne
+    private Location loc;
+
 
 
 

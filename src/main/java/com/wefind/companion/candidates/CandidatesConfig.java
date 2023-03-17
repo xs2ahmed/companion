@@ -25,7 +25,7 @@ public class CandidatesConfig {
         return args -> {
 
             Candidate one =  new Candidate("Muhammad Ahmed", 0,"Hi This is Ahmed","+9200000000","mahmed@gmail.com", LocalDate.now(),0, LocalDate.now(),LocalDate.now()) ;
-            Candidate two =  new Candidate("Muhammad Ali", 0,"Hi This is Ahmed","+9200000000","mahmed@gmail.com", LocalDate.now(),0, LocalDate.now(),LocalDate.now()) ;
+            Candidate two =  new Candidate("Muhammad Ali", 0,"Hi This is Ahmed","92300","mahmed@gmail.com", LocalDate.now(),0, LocalDate.now(),LocalDate.now()) ;
             candidatesRepository.saveAll(List.of(one,two));
         };
 
